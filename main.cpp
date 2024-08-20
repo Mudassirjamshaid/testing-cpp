@@ -6,26 +6,25 @@
 
 using namespace std;
 
+class Student{
+    public:
+
+    virtual void getInfo() {
+    cout << "Base Class is playing...\n";
+    }
+};
+
+class Person : public Student {
+    public:
+
+    void getInfo() {
+        cout << "Derived Class playing...\n";
+    }
+};
+
 int main()
 {
-    int height;
-    int width;
-    char symbol;
-    cout << "Enter Height : ";
-    cin >> height;
-    cout << "Enter Width : ";
-    cin >> width;
-    cout << "Enter Symbol :";
-    cin >> symbol;
-
-    for (int i = 0; i < height; i++)
-    {
-        for (int i = 0; i < width; i++)
-        {
-            cout << symbol;
-        }
-        cout << endl;
-    }
-
+  Student *s1 = new Person();
+  s1->getInfo();  
     return 0;
 }
