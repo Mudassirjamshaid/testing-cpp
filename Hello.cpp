@@ -1,47 +1,36 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
+#include <string>
+
 using namespace std;
 
+class EqulateralTriangle {
+private:
+    float a;
+    float circumferance;
+    float area;
+public: 
+    
+    void setA(float length) {
+     a = length;
+     circumferance = a*3;
+     area = (1.73 * a * a) / 4; 
 
-class Shape {
-   protected:
-    float dimension;
-
-   public:
-    void getDimension() {
-        cin >> dimension;
     }
-
-    // pure virtual Function
-    virtual float calculateArea() = 0;
+     friend void print(EqulateralTriangle);
 };
 
-// Derived class
-class Square : public Shape {
-   public:
-    float calculateArea() {
-        return dimension * dimension;
-    }
-};
+ void print(EqulateralTriangle et) {
+    cout << "circumference : " << et.circumferance << endl;
+    cout << "area : " << et.area << endl;
+ }
 
-// Derived class
-class Circle : public Shape {
-   public:
-    float calculateArea() {
-        return 3.14 * dimension * dimension;
-    }
-};
-
-int main() {
-    Square square;
-    Circle circle;
-
-    cout << "Enter the length of the square: ";
-    square.getDimension();
-    cout << "Area of square: " << square.calculateArea() << endl;
-
-    cout << "\nEnter radius of the circle: ";
-    circle.getDimension();
-    cout << "Area of circle: " << circle.calculateArea() << endl;
-
+int main()
+{
+    EqulateralTriangle et;
+    et.setA(3);
+    print(et);
     return 0;
 }
