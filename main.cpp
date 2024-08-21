@@ -10,7 +10,7 @@ class Student{
     public:
 
     virtual void getInfo() {
-    cout << "Base Class is playing...\n";
+    cout << "Base Class is playing...\n";          
     }
 };
 
