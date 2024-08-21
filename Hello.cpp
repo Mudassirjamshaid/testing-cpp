@@ -19,18 +19,25 @@ public:
      area = (1.73 * a * a) / 4; 
 
     }
-     friend void print(EqulateralTriangle);
+    // friend void print(EqulateralTriangle);
+    friend class HomeWork;
 };
 
+class HomeWork {
+    public:
  void print(EqulateralTriangle et) {
     cout << "circumference : " << et.circumferance << endl;
     cout << "area : " << et.area << endl;
  }
 
+};
+
+
 int main()
 {
     EqulateralTriangle et;
     et.setA(3);
-    print(et);
+    HomeWork h;
+    h.print(et);
     return 0;
 }
