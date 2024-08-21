@@ -5,52 +5,85 @@
 #include <string>
 
 using namespace std;
-class Hello
+
+class Rectangle
 {
 private:
     /* data */
 public:
-    string name;
-int age;
-    Hello(string name, int age);
-    Hello() {
-        cout << "Polymarphism..\n";
-    }
-    ~Hello();
+    Rectangle(/* args */);
+    ~Rectangle();
+    float dimenshion;
+    
+     
+     // Pure Virtual Function
+    virtual float calculateArea() = 0;
 };
 
-Hello::Hello(string name, int age)
-{
-    this->name  = name;
-    this->age = age; 
-}
-
-Hello::~Hello()
+Rectangle::Rectangle(/* args */)
 {
 }
 
+Rectangle::~Rectangle()
+{
+}
 
-class Student{
-    public:
+class Square : public Rectangle
+{
+private:
+    /* data */
+public:
+    Square(/* args */);
+    ~Square();
+     
+     void getDimenshion() {
+        cin >> dimenshion;
+     }
 
-    virtual void getInfo() {
-    cout << "Base Class is playing...\n";          
+    float calculateArea() {
+        return dimenshion * dimenshion;
     }
 };
 
-class Person : public Student {
-    public:
+Square::Square(/* args */)
+{
+}
 
-    void getInfo() {
-        cout << "Derived Class playing...\n";
+Square::~Square()
+{
+}
+
+class Triangle : public Square
+{
+private:
+    /* data */
+public:
+    Triangle(/* args */);
+    ~Triangle();
+
+    float calculateArea() {
+        return 3.14 * dimenshion * dimenshion;
     }
 };
+
+Triangle::Triangle(/* args */)
+{
+}
+
+Triangle::~Triangle()
+{
+}
+
+
+
 
 int main()
 {
-    Hello H("Mudasir", 13);
-    // H.name = "Mudair";
-    // H.age = 15;
-    cout << H.name << " " << H.age << endl;
+    Square square;
+    Triangle tri;
+     cout << "Enter Your Dimenshiion : ";
+    square.dimenshion;
+    cout << square.calculateArea();
+
     return 0;
 }
