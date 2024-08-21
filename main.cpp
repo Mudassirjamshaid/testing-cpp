@@ -5,27 +5,36 @@
 #include <string>
 
 using namespace std;
+class Hello
+{
+private:
+    /* data */
+public:
+    string name;
+int age;
+    Hello(string name, int age);
+    Hello() {
+        cout << "Polymarphism..\n";
+    }
+    ~Hello();
+};
+
+Hello::Hello(string name, int age)
+{
+    this->name  = name;
+    this->age = age; 
+}
+
+Hello::~Hello()
+{
+}
+
 
 int main()
 {
-    int height;
-    int width;
-    char symbol;
-    cout << "Enter Height : ";
-    cin >> height;
-    cout << "Enter Width : ";
-    cin >> width;
-    cout << "Enter Symbol :";
-    cin >> symbol;
-
-    for (int i = 0; i < height; i++)
-    {
-        for (int i = 0; i < width; i++)
-        {
-            cout << symbol;
-        }
-        cout << endl;
-    }
-
+    Hello H("Mudasir", 13);
+    // H.name = "Mudair";
+    // H.age = 15;
+    cout << H.name << " " << H.age << endl;
     return 0;
 }
