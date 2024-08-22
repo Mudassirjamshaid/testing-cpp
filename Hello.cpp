@@ -1,42 +1,92 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include <cmath>
-#include <string>
-
 using namespace std;
 
-class Hello
-{
-private:
-    /* data */
+class Person {
 public:
+    string name;
+    int age;
 
-
-    virtual void getInfo() = 0;
+    virtual void getdata() = 0;
+    virtual void putdata() = 0;
 };
 
-class Main : public Hello {
-    public:
+class Professor : public Person {
+public:
+    int publications;
+    static int idCounter;
+    int cur_id;
 
-    void getInfo() {
-     cout << "Derived Class playing...\n ";
+    Professor() {
+        cur_id = ++idCounter;
+    }
+
+    void getdata() override {
+        cin >> name >> age >> publications;
+    }
+
+    void putdata() override {
+        cout << name << " " << age << " " << publications << " " << cur_id << endl;
     }
 };
 
-class Person : public Main {
-    public:
+// Initialize static member
+int Professor::idCounter = 0;
 
-    void getInfo() {
-        cout << "My Second Derived Classs is playing...\n";
+class Student : public Person {
+public:
+    int marks[6];
+    static int idCounter;
+    int cur_id;
+
+    Student() {
+        cur_id = ++idCounter;
+    }
+
+    void getdata() override {
+        cin >> name >> age;
+        for (int i = 0; i < 6; i++) {
+            cin >> marks[i];
+        }
+    }
+
+    void putdata() override {
+        int sum = 0;
+        for (int i = 0; i < 6; i++) {
+            sum += marks[i];
+        }
+        cout << name << " " << age << " " << sum << " " << cur_id << endl;
     }
 };
 
-int main()
-{
-  Main m;
-  m.getInfo();
-  Person p;
-  p.getInfo();  
+// Initialize static member
+int Student::idCounter = 0;
+
+int main() {
+    int n, val;
+    cin >> n; // The number of objects that are going to be created.
+    Person *per[n];
+
+    for (int i = 0; i < n; i++) {
+        cin >> val;
+        if (val == 1) {
+            // If val is 1, the current object is of type Professor
+            per[i] = new Professor;
+        } else {
+            // Else, the current object is of type Student
+            per[i] = new Student;
+        }
+
+        per[i]->getdata(); // Get the data from the user.
+    }
+
+    for (int i = 0; i < n; i++) {
+        per[i]->putdata(); // Print the required output for each object.
+    }
+
+    // Clean up dynamic memory
+    for (int i = 0; i < n; i++) {
+        delete per[i];
+    }
+
     return 0;
 }
