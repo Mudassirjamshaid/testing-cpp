@@ -6,38 +6,37 @@
 
 using namespace std;
 
-class EqulateralTriangle {
+class Hello
+{
 private:
-    float a;
-    float circumferance;
-    float area;
-public: 
-    
-    void setA(float length) {
-     a = length;
-     circumferance = a*3;
-     area = (1.73 * a * a) / 4; 
+    /* data */
+public:
 
-    }
-    // friend void print(EqulateralTriangle);
-    friend class HomeWork;
+
+    virtual void getInfo() = 0;
 };
 
-class HomeWork {
+class Main : public Hello {
     public:
- void print(EqulateralTriangle et) {
-    cout << "circumference : " << et.circumferance << endl;
-    cout << "area : " << et.area << endl;
- }
 
+    void getInfo() {
+     cout << "Derived Class playing...\n ";
+    }
 };
 
+class Person : public Main {
+    public:
+
+    void getInfo() {
+        cout << "My Second Derived Classs is playing...\n";
+    }
+};
 
 int main()
 {
-    EqulateralTriangle et;
-    et.setA(3);
-    HomeWork h;
-    h.print(et);
+  Main m;
+  m.getInfo();
+  Person p;
+  p.getInfo();  
     return 0;
 }
