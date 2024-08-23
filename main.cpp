@@ -1,17 +1,21 @@
 #include <iostream>
-#include <vector>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
+#include <list>
 
 using namespace std;
 
-int main() {
-    
-    // create vector of int type
-    vector<int> numbers {1, 2, 3, 4, 5};
+int main()
+{
+  list<int> mylist;
+  mylist.push_back(12);
+  mylist.push_back(22);
+  mylist.push_front(9);
 
-    // print vector elements using ranged loop
-    for (int number : numbers) {
-        cout << number << "  ";
-    }
-    
-    return 0;
+for(list<int>::iterator it = mylist.begin(); it != mylist.end(); it++) {
+  cout << *it << endl;
+}
+  
+  return 0;
 }
