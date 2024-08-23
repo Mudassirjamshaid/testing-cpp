@@ -1,7 +1,7 @@
 # Hello World!
 <h1>Auther : Mudasir Abbas</h1>
-<br>
-Subject : C++
-<br>
-Description : I am Currently Learning CPP
+<h3> Subject </h3>
+ C/C++
+<h3> Description </h3>
+  I am Currently Learning CPP
 
