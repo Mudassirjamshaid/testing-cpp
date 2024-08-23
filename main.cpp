@@ -12,6 +12,7 @@ int main()
   mylist.push_back(12);
   mylist.push_back(22);
   mylist.push_front(9);
+  mylist.erase( mylist.begin());
 
 for(list<int>::iterator it = mylist.begin(); it != mylist.end(); it++) {
   cout << *it << endl;
