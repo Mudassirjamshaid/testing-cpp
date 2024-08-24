@@ -1,18 +1,33 @@
 #include <iostream>
 #include <list>
 
-int main() {
-    std::list<int> myList = {30, 10, 20, 50, 40};
+using namespace std;
 
-    // Sorting the list
+int main() {
+    list<int> myList = {30, 10, 20, 50, 40};
+
+    cout << "List in initial order : " << endl;
+    for(int number : myList) {
+        cout << number << ", " << endl;
+    }
+
+    myList.reverse();
+    
+    cout << "list in reverse order : " << endl;
+    for(int number : myList) {
+        cout << number << ", " << endl;
+    }
+
+    cout << endl;
+
     myList.sort();
 
-    // Displaying the sorted list
-    std::cout << "Sorted List: ";
-    for (int value : myList) {
-        std::cout << value << " ";
+    for(int number : myList) {
+        cout << number << ", " << endl;
+    }    
+myList.clear();
+    for(int number : myList) {
+        cout << number << ", " << endl;
     }
-    std::cout << std::endl;
-
     return 0;
 }
