@@ -1,46 +1,38 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <cmath>
+#include <list>
 #include <string>
 
 using namespace std;
 
-template <typename T>
-class CalculateValue {
-  public:
-
-  T add(T a, T b) {
-    return a + b;
+void dispalyRating(const list<int>& playerRating) {
+  for(list<int>::const_iterator it = playerRating.begin(); it != playerRating.end(); it++) {
+    cout << "player Rating : " << *it << endl;
   }
   
-  T substract(T a, T b) {
-    return a - b;
-  }
-  
-  T multiply(T a, T b) {
-    return a * b;
-  }
-
-  
-  T divides(T a, T b) {
-    if (b == 0)
-    {
-      cout << "Zero Cannot be Allowed To Divide Valve ";
-    }
-    
-    return a / b;
-  }
-};
+}
 
 int main()
 {
-  CalculateValue<int> intvalue;
-  intvalue.add(5, 6);
-  intvalue.substract(5, 9);
+  list<int> allPlayers = {9, 7, 6, 3 , 8, 1, 2, 5, 9 , 4};
 
-  CalculateValue<float> floatvalue;
-  floatvalue.multiply(7, 8);
-  floatvalue.divides(6, 9);
+  list<int> beginners;
+  list<int> pros;
+
+  for(list<int>:: iterator it = allPlayers.begin(); it != allPlayers.end(); it++ ) {
+    int rating = *it;
+    if (rating >= 1 && rating <= 5) {
+      beginners.push_back(rating);
+    }
+    else if (rating >= 6 && rating <= 10)
+    {
+      pros.push_back(rating);
+    }
+  }
+    cout << "Beginner : " << endl;
+    dispalyRating(beginners);
+    cout << "Pros : " << endl;
+    dispalyRating(pros);
   return 0;
 }
