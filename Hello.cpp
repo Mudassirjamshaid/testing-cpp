@@ -1,29 +1,33 @@
 #include <iostream>
 #include <list>
 
-using namespace std;
-
 int main() {
-    // create a list
-    list<int> numbers = {1, 2, 3, 4, 5};
- 
-    // display the original list 
-    cout << "Inital List: ";
-    for(int number : numbers) {
-        cout << number << ",  ";
+    std::list<int> myList;  // Create an empty list of integers
+
+    // Adding elements to the list
+    myList.push_back(10);
+    myList.push_back(20);
+    myList.push_back(30);
+
+    // Displaying the list elements
+    std::cout << "List elements: ";
+    for (int value : myList) {
+        std::cout << value << " ";
     }
+    std::cout << std::endl;
 
-    // remove the first element of the list
-    numbers.pop_front();
+    // Inserting an element at the beginning
+    myList.push_front(5);
 
-    // remove the last element of the list
-    numbers.pop_back();
+    // Removing the last element
+    myList.pop_back();
 
-    // display the modified list 
-    cout << endl << "Final List: ";
-    for(int number : numbers) {
-        cout << number << ", ";
+    // Displaying the updated list elements
+    std::cout << "Updated List elements: ";
+    for (int value : myList) {
+        std::cout << value << " ";
     }
+    std::cout << std::endl;
 
     return 0;
 }
