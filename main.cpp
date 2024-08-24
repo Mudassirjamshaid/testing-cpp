@@ -1,38 +1,27 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
 #include <list>
-#include <string>
 
-using namespace std;
+int main() {
+    std::list<std::string> myList = {"apple", "banana", "cherry"};
 
-void dispalyRating(const list<int>& playerRating) {
-  for(list<int>::const_iterator it = playerRating.begin(); it != playerRating.end(); it++) {
-    cout << "player Rating : " << *it << endl;
-  }
-  
-}
-
-int main()
-{
-  list<int> allPlayers = {9, 7, 6, 3 , 8, 1, 2, 5, 9 , 4};
-
-  list<int> beginners;
-  list<int> pros;
-
-  for(list<int>:: iterator it = allPlayers.begin(); it != allPlayers.end(); it++ ) {
-    int rating = *it;
-    if (rating >= 1 && rating <= 5) {
-      beginners.push_back(rating);
+    // Displaying list using iterator
+    std::cout << "Fruits: ";
+    for (std::list<std::string>::iterator it = myList.begin(); it != myList.end(); ++it) {
+        std::cout << *it << " ";
     }
-    else if (rating >= 6 && rating <= 10)
-    {
-      pros.push_back(rating);
+    std::cout << std::endl;
+
+    // Inserting an element using an iterator
+    std::list<std::string>::iterator it = myList.begin();
+    ++it;  // Move the iterator to the second position
+    myList.insert(it, "orange");
+
+    // Displaying the updated list
+    std::cout << "Updated Fruits: ";
+    for (const auto& fruit : myList) {
+        std::cout << fruit << " ";
     }
-  }
-    cout << "Beginner : " << endl;
-    dispalyRating(beginners);
-    cout << "Pros : " << endl;
-    dispalyRating(pros);
-  return 0;
+    std::cout << std::endl;
+
+    return 0;
 }
