@@ -3,36 +3,24 @@
 using namespace std;
 
 int main() {
+  vector<int> num {1, 2, 3, 4, 5};
 
-  // initializer list
-  vector<int> vector1 = {1, 2, 3, 4, 5};
+  // declare iterator
+  vector<int>::iterator iter;
 
-  // uniform initialization
-  vector<int> vector2{6, 7, 8, 9, 10};
+  // initialize the iterator with the first element
+  iter = num.begin();
 
-  // method 3
-  vector<int> vector3(5, 12);
+  // print the vector element
+  cout << "num[0] = " << *iter << endl;
 
-  cout << "vector1 = ";
+  // iterator points to the 3rd element
+  iter = num.begin() + 2;
+  cout << "num[2] = " << *iter;
 
-  // ranged loop
-  for (const int& i : vector1) {
-    cout << i << "  ";
-  }
-
-  cout << "\nvector2 = ";
-
-  // ranged loop
-  for (const int& i : vector2) {
-    cout << i << "  ";
-  }
-
-  cout << "\nvector3 = ";
-
-  // ranged loop
-  for (int i : vector3) {
-    cout << i << "  ";
-  }
+  // iterator points to the last element
+  iter = num.end() - 1;
+  cout << "num[4] = " << *iter;
 
   return 0;
 }
