@@ -1,33 +1,95 @@
 #include <iostream>
-#include <list>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
+#include <string>
 
 using namespace std;
 
-int main() {
-    list<int> myList = {30, 10, 20, 50, 40};
+template <typename T>
+class PersonInfo
+{
+private:
+    T salery;
+    T password;
+    T price;
+public:
+    T name;
+    T age;
+    T address;
+    T state;
+    T stander;
+    T cgpa;
+    T id;
+    T city;
+    T fatherName;
+    T rollNo;
+    T subject;
+    T department;
 
-    cout << "List in initial order : " << endl;
-    for(int number : myList) {
-        cout << number << ", " << endl;
+    PersonInfo();
+    ~PersonInfo();
+
+    void input() {
+        cout << "Enter Your Name: ";
+        cin >> name;
+        cout << "Enter Your Age: ";
+        cin >> age;
+        cout << "Enter Your Subject: ";
+        cin >> subject;
+        cout << "Enter Your Salary: ";
+        cin >> salery;
+        cout << "Enter Your Password: ";
+        cin >> password;
     }
 
-    myList.reverse();
-    
-    cout << "list in reverse order : " << endl;
-    for(int number : myList) {
-        cout << number << ", " << endl;
+    template <typename U>
+    friend class Hello;
+};
+
+template <typename T>
+PersonInfo<T>::PersonInfo() {
+    // Constructor implementation
+}
+
+template <typename T>
+PersonInfo<T>::~PersonInfo() {
+    // Destructor implementation
+}
+
+template <typename T>
+class Hello
+{
+public:
+    Hello();
+    ~Hello();
+
+    void print(PersonInfo<T> &obj) {
+        cout << "Name: " << obj.name << endl;
+        cout << "Age: " << obj.age << endl;
+        cout << "Subject: " << obj.subject << endl;
+        cout << "Salary: " << obj.salery << endl;
+        cout << "Password: " << obj.password << endl;
     }
+};
 
-    cout << endl;
+template <typename T>
+Hello<T>::Hello() {
+    // Constructor implementation
+}
 
-    myList.sort();
+template <typename T>
+Hello<T>::~Hello() {
+    // Destructor implementation
+}
 
-    for(int number : myList) {
-        cout << number << ", " << endl;
-    }    
-myList.clear();
-    for(int number : myList) {
-        cout << number << ", " << endl;
-    }
+int main()
+{
+    PersonInfo<string> person;
+    person.input();
+
+    Hello<string> hello;
+    hello.print(person);
+
     return 0;
 }

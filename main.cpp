@@ -6,28 +6,33 @@
 
 using namespace std;
 
+template <typename T>
 class PersonInfo
 {
 private:
-    float salery;
-    string password;
-    float price;
+    T salery;
+    T password;
+    T price;
 public:
-    string name;
-    int age;
-    string address;
-    string state;
-    int stander;
-    float cgpa;
-    int id;
-    string city;
-    string fatherName;
-    int rollNo;
-    string subject;
-    string department;
+    T name;
+    T age;
+    T address;
+    T state;
+    T stander;
+    T cgpa;
+    T id;
+    T city;
+    T fatherName;
+    T rollNo;
+    T subject;
+    T department;
 
-    PersonInfo();
-    ~PersonInfo();
+    PersonInfo(){
+
+    }
+    ~PersonInfo(){
+
+    }
 
     void input() {
         cout << "Enter Your Name: ";
@@ -41,25 +46,18 @@ public:
         cout << "Enter Your Password: ";
         cin >> password;
     }
-
+    template <typename u>
     friend class Hello;
 };
 
-PersonInfo::PersonInfo() {
-    // Constructor implementation
-}
-
-PersonInfo::~PersonInfo() {
-    // Destructor implementation
-}
-
+template <typename T>
 class Hello
 {
 public:
     Hello();
     ~Hello();
 
-    void print(PersonInfo &obj) {
+    void print(PersonInfo<T> &obj) {
         cout << "Name: " << obj.name << endl;
         cout << "Age: " << obj.age << endl;
         cout << "Subject: " << obj.subject << endl;
@@ -68,20 +66,21 @@ public:
     }
 };
 
-Hello::Hello() {
+template <typename T>
+Hello<T>::Hello() {
     // Constructor implementation
 }
-
-Hello::~Hello() {
+template <typename T>
+Hello<T>::~Hello() {
     // Destructor implementation
 }
 
 int main()
 {
-    PersonInfo person;
+    PersonInfo<string> person;
     person.input();
 
-    Hello hello;
+     Hello<string> hello;
     hello.print(person);
 
     return 0;
