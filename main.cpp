@@ -1,24 +1,32 @@
 #include <iostream>
-#include <list>
+#include <algorithm>
+#include <numeric>
+#include <array>
 
-int main() {
-    std::list<std::string> myList = {"apple", "banana", "cherry"};
+using namespace std;
 
-    std::cout << "Fruits: ";
-    for (std::list<std::string>::iterator it = myList.begin(); it != myList.end(); ++it) {
-        std::cout << *it << " ";
+int main(){
+    array<int, 5> age = {45, 23, 66, 87, 21};
+
+    // sorting
+    sort(age.begin(), age.end());
+
+    // print the sorted array
+    cout << "The sorted array is: ";
+    for(const int elt: age){
+        cout << elt << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 
-    std::list<std::string>::iterator it = myList.begin();
-    ++it; 
-    myList.insert(it, "orange");
+    // searching
+   // checking whether the number 5  exists or not
+    auto found = find(age.begin(), age.end(), 5);
 
-    std::cout << "Updated Fruits: ";
-    for (const auto& fruit : myList) {
-        std::cout << fruit << " ";
-    }
-    std::cout << std::endl;
+    if (found != age.end()) cout << "5 was Found" << endl;
+    else cout << "5 was Not Found" << endl;
 
-    return 0;
+    // summing
+    int sum = accumulate(age.begin(), age.end(), 0);
+
+    cout << "The sum of the element of array is : " << sum;
 }
