@@ -4,10 +4,10 @@
 using namespace std;
 
 int main() {
-    array<int, 5> numbers {1, 2, 3, 4, 5};
+    array<string, 5> numbers {"apple", "Mango", "banana", "cherry", "flower"};
     
-    cout << "Testing an array ";
-    for (int number : numbers) 
+    cout << "String array : ";
+    for (string number : numbers) 
     {
         cout << number << " " ;
     }
