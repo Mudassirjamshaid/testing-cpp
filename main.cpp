@@ -12,76 +12,53 @@ class PersonInfo
 private:
     T salery;
     T password;
-    T price;
 public:
     T name;
     T age;
-    T address;
-    T state;
-    T stander;
-    T cgpa;
-    T id;
-    T city;
-    T fatherName;
-    T rollNo;
     T subject;
-    T department;
+    T dept;
+    PersonInfo(/* args */);
+    ~PersonInfo();
 
-    PersonInfo(){
-
-    }
-    ~PersonInfo(){
-
-    }
-
-    void input() {
-        cout << "Enter Your Name: ";
+    T input() {
+        cout << "Enter Your Name : ";
         cin >> name;
-        cout << "Enter Your Age: ";
+        cout << "Enter Your Age : ";
         cin >> age;
-        cout << "Enter Your Subject: ";
+        cout << "Enter Your Subject : ";
         cin >> subject;
-        cout << "Enter Your Salary: ";
+        cout << "Enter Your Department : ";
+        cin >> dept;
+        cout << "Enter Your Salery : ";
         cin >> salery;
-        cout << "Enter Your Password: ";
+        cout << "Enter Your Password : ";
         cin >> password;
     }
-    template <typename u>
-    friend class Hello;
+
+     T display() {
+        cout << "Display Data : " << endl;
+        cout << "Name : " << name << endl;
+        cout << "Age : " << age << endl;
+        cout << "subject : " << subject << endl;
+        cout << "dept : " << dept << endl;
+        cout << "Salery : " << salery << endl;
+        cout << "Password : " << password << endl;
+     }
 };
 
 template <typename T>
-class Hello
+PersonInfo<T>::PersonInfo(/* args */)
 {
-public:
-    Hello();
-    ~Hello();
-
-    void print(PersonInfo<T> &obj) {
-        cout << "Name: " << obj.name << endl;
-        cout << "Age: " << obj.age << endl;
-        cout << "Subject: " << obj.subject << endl;
-        cout << "Salary: " << obj.salery << endl;
-        cout << "Password: " << obj.password << endl;
-    }
-};
-
-template <typename T>
-Hello<T>::Hello() {
-    // Constructor implementation
 }
 template <typename T>
-Hello<T>::~Hello() {
-    // Destructor implementation
+PersonInfo<T>::~PersonInfo()
+{
 }
 
 int main()
 {
-    PersonInfo<string> person;
-    person.input();
-
-     Hello<string> hello;
-    hello.print(person);
-
+    PersonInfo<string> obj;
+    obj.input();
+    obj.display();
     return 0;
 }
