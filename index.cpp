@@ -14,8 +14,8 @@ int main()
     numbers.push_back(i);
   } 
 
-  for(auto number : numbers) {
-    cout << number << endl;
+  for(auto it = numbers.begin(); it != numbers.end(); it++) {
+    cout << *it << endl;
   }
   return 0;
 }
