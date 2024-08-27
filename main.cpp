@@ -8,8 +8,6 @@ using namespace std;
 
 template <typename T>
 class Person{
-    T salery;
-    T pasword;
 public:
   T name;
   T age;
@@ -20,6 +18,9 @@ public:
   T email;
   T marks;
   T cgpa;
+  T salery;
+  T pasword;
+
 
 void input() {
     cout << "Enter Your Name : ";
@@ -38,6 +39,12 @@ void input() {
     cin >> dept;
     cout << "Enter Your cgpa : ";
     cin >> cgpa;
+    cout << "Enter Your email : ";
+    cin >> email;
+    cout << "Enter Your password : ";
+    cin >> pasword;
+    cout << "Enter Your salery : ";
+    cin >> salery;
 }
 
 };
@@ -57,6 +64,9 @@ int main()
     myInfo << "Person Department : " << stringInfo.dept << endl;
     myInfo << "Person Marks : " << stringInfo.marks << endl;
     myInfo << "Person Cgpa : " << stringInfo.cgpa << endl;
+    myInfo << "Person Cgpa : " << stringInfo.email << endl;
+    myInfo << "Person Cgpa : " << stringInfo.pasword << endl;
+    myInfo << "Person Cgpa : " << stringInfo.salery << endl;
 
     myInfo.close();
     return 0;
