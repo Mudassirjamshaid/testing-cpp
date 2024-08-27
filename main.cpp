@@ -1,64 +1,63 @@
 #include <iostream>
 #include <cstdlib>
-#include <ctime>
+#include <fstream>
 #include <cmath>
 #include <string>
 
 using namespace std;
 
 template <typename T>
-class PersonInfo
-{
-private:
+class Person{
     T salery;
-    T password;
+    T pasword;
 public:
-    T name;
-    T age;
-    T subject;
-    T dept;
-    PersonInfo(/* args */);
-    ~PersonInfo();
+  T name;
+  T age;
+  T subject;
+  T dept;
+  T rollNo;
+  T stander;
+  T email;
+  T marks;
+  T cgpa;
 
-    T input() {
-        cout << "Enter Your Name : ";
-        cin >> name;
-        cout << "Enter Your Age : ";
-        cin >> age;
-        cout << "Enter Your Subject : ";
-        cin >> subject;
-        cout << "Enter Your Department : ";
-        cin >> dept;
-        cout << "Enter Your Salery : ";
-        cin >> salery;
-        cout << "Enter Your Password : ";
-        cin >> password;
-    }
+void input() {
+    cout << "Enter Your Name : ";
+    cin >> name;
+    cout << "Enter Your Age : ";
+    cin >> age;
+    cout << "Enter Your Stander : ";
+    cin >> stander;
+    cout << "Enter Your Subect : ";
+    cin >> subject;
+    cout << "Enter Your rollNo : ";
+    cin >> rollNo;
+    cout << "Enter Your Marks : ";
+    cin >> marks;
+    cout << "Enter Your Department : ";
+    cin >> dept;
+    cout << "Enter Your cgpa : ";
+    cin >> cgpa;
+}
 
-     T display() {
-        cout << "Display Data : " << endl;
-        cout << "Name : " << name << endl;
-        cout << "Age : " << age << endl;
-        cout << "subject : " << subject << endl;
-        cout << "dept : " << dept << endl;
-        cout << "Salery : " << salery << endl;
-        cout << "Password : " << password << endl;
-     }
 };
-
-template <typename T>
-PersonInfo<T>::PersonInfo(/* args */)
-{
-}
-template <typename T>
-PersonInfo<T>::~PersonInfo()
-{
-}
 
 int main()
 {
-    PersonInfo<string> obj;
-    obj.input();
-    obj.display();
+    Person<string> stringInfo;
+    stringInfo.input();
+
+    ofstream myInfo("Text.txt");
+
+    myInfo << "Personal Information " << endl;
+    myInfo << "Person Name : " << stringInfo.name << endl;
+    myInfo << "Person Age : " << stringInfo.age << endl;
+    myInfo << "Person Stander : " << stringInfo.stander << endl;
+    myInfo << "Person subject : " << stringInfo.subject << endl;
+    myInfo << "Person Department : " << stringInfo.dept << endl;
+    myInfo << "Person Marks : " << stringInfo.marks << endl;
+    myInfo << "Person Cgpa : " << stringInfo.cgpa << endl;
+
+    myInfo.close();
     return 0;
 }
