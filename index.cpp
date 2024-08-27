@@ -1,31 +1,34 @@
 #include <iostream>
-#include <cstdlib>
 #include <vector>
-#include <cmath>
-#include <string>
 
-using namespace std;
+int main() {
+    // Initialize a vector with some values
+    std::vector<int> myVector = {1, 2, 3, 4, 5};
 
-int main()
-{
-  vector<int> numbers;
+    // Add elements to the vector
+    myVector.push_back(6);
+    myVector.push_back(7);
 
-  for(int i = 1; i <= 10; i++) {
-    numbers.push_back(i);
-  } 
+    // Access elements
+    std::cout << "Vector elements: ";
+    for (const int& element : myVector) {
+        std::cout << element << " ";
+    }
+    std::cout << std::endl;
 
-  for(auto it = numbers.begin(); it != numbers.end(); it++) {
-    cout << *it << endl;
-  }
+    // Create a stack of vectors (just for fun!)
+    std::vector<std::vector<int>> myStack = {myVector};
 
-  cout << "size is : " << numbers.size() << endl;
-  cout << "maximum number : " << numbers.max_size() << endl;
-  cout << "capacity : " << numbers.capacity() << endl;
-  numbers.resize(5);
-  cout << "New Size : " << numbers.size() << endl;
-  cout << "new capacity : " << numbers.capacity() << endl;
-  cout << "accesing specific element : " << numbers.at(5);
-  cout << "accesing specific element : " << numbers.at(5);
-  
-  return 0;
+    // Print the stack
+    std::cout << "Stack of vectors: [";
+    for (const auto& vec : myStack) {
+        std::cout << "{";
+        for (const int& element : vec) {
+            std::cout << element << ", ";
+        }
+        std::cout << "}, ";
+    }
+    std::cout << "]" << std::endl;
+
+    return 0;
 }
