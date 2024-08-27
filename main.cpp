@@ -24,25 +24,25 @@ public:
 
 void input() {
     cout << "Enter Your Name : ";
-    cin >> name;
+    getline(cin, name);
     cout << "Enter Your Age : ";
     cin >> age;
     cout << "Enter Your Stander : ";
     cin >> stander;
     cout << "Enter Your Subect : ";
-    cin >> subject;
+    getline(cin, subject);
     cout << "Enter Your rollNo : ";
     cin >> rollNo;
     cout << "Enter Your Marks : ";
     cin >> marks;
     cout << "Enter Your Department : ";
-    cin >> dept;
+    getline (cin , dept);
     cout << "Enter Your cgpa : ";
     cin >> cgpa;
     cout << "Enter Your email : ";
-    cin >> email;
+    getline(cin, email);
     cout << "Enter Your password : ";
-    cin >> pasword;
+    getline(cin, pasword);
     cout << "Enter Your salery : ";
     cin >> salery;
 }

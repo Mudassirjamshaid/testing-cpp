@@ -1,18 +1,24 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
 #include <stack>
-#include <string>
-
 using namespace std;
 
-int main()
-{
-    stack<string> stack;
-    stack.push("Cpp");
-    stack.push("Python");
-    stack.push("Java");
+int main() {
 
-    cout << stack.top() << endl;
-    return 0;
+  // create a stack of strings
+  stack<string> colors;
+
+  // push elements into the stack
+  colors.push("Red");
+  colors.push("Orange");
+  colors.push("cpp");
+  
+  cout << "Stack: ";
+
+  // print elements of stack
+   while(!colors.empty()) {
+    cout << colors.top() << ", ";
+    colors.pop();
+  }
+ 
+  return 0;
 }
