@@ -74,26 +74,81 @@ public:
   }
 };
 
+class Student : public Person<string> {
+public:
+  void input() override {
+    cout << "Enter name: ";
+    getline(cin, name);
+    cout << "Enter age: ";
+    getline(cin, age);
+    cout << "Enter gender: ";
+    getline(cin, gender);
+    cout << "Enter address: ";
+    getline(cin, address);
+    cout << "Enter subject: ";
+    getline(cin, subject);
+    cout << "Enter marks: ";
+    getline(cin, marks);
+    cout << "Enter grades: ";
+    getline(cin, grades);
+    cout << "Enter your interests: ";
+    getline(cin, interests);
+    cout << "What is your goal: ";
+    getline(cin, goals);
+  }
+
+  void display() override {
+    cout << "Name: " << name << endl;
+    cout << "Age: " << age << endl;
+    cout << "Gender: " << gender << endl;
+    cout << "Address: " << address << endl;
+    cout << "Subject: " << subject << endl;
+    cout << "Marks: " << marks << endl;
+    cout << "Grades: " << grades << endl;
+    cout << "Interests: " << interests << endl;
+    cout << "Goals: " << goals << endl;
+  }
+};
+
 int main() {
-  Employes<string> stringValues;
-  stringValues.input();
+  // Employee information
+  Employes<string> employee;
+  employee.input();
 
   ofstream file("Text.txt");
   if (file.is_open()) {
-    file << "Information about Employes" << endl;
-    file << "Name: " << stringValues.name << endl;
-    file << "Age: " << stringValues.age << endl;
-    file << "Gender: " << stringValues.gender << endl;
-    file << "Address: " << stringValues.address << endl;
-    file << "Education: " << stringValues.education << endl;
-    file << "Skills: " << stringValues.skills << endl;
+    file << "Information about Employees" << endl;
+    file << "Name: " << employee.name << endl;
+    file << "Age: " << employee.age << endl;
+    file << "Gender: " << employee.gender << endl;
+    file << "Address: " << employee.address << endl;
+    file << "Education: " << employee.education << endl;
+    file << "Skills: " << employee.skills << endl;
     file.close();
   } else {
     cout << "Unable to open file" << endl;
   }
 
-  // Print private information using the friend function
-  printPrivateInfo(stringValues);
+  // Student information
+  Student<string> student;
+  student.input();
+
+  file.open("Text.txt", ios::app);  // Open file in append mode
+  if (file.is_open()) {
+    file << "\nInformation about Students" << endl;
+    file << "Name: " << student.name << endl;
+    file << "Age: " << student.age << endl;
+    file << "Gender: " << student.gender << endl;
+    file << "Address: " << student.address << endl;
+    file << "Subject: " << student.subject << endl;
+    file << "Marks: " << student.marks << endl;
+    file << "Grades: " << student.grades << endl;
+    file << "Interests: " << student.interests << endl;
+    file << "Goals: " << student.goals << endl;
+    file.close();
+  } else {
+    cout << "Unable to open file" << endl;
+  }
 
   return 0;
 }
