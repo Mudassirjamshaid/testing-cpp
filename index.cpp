@@ -1,19 +1,20 @@
+#include <map>
 #include <iostream>
-#include <unordered_map>
-
+#include <string>
 using namespace std;
-
-int main() {
-  unordered_map<string, string> myDictionary;
-  myDictionary.insert(pair<string, string> ("Banana", "kala"));
-  myDictionary.insert(pair<string, string> ("Orange", "Malta"));
-  myDictionary.insert(pair<string, string> ("Apple", "Saab"));
-
-  for (auto pair : myDictionary)
-  {
-    cout << pair.first << " - " << pair.second << endl;
-  }
-  
-
-  return 0;
+/*
+After Reading 'MAP in C++', thought about Google Map in C++..finally 
+understand, could not search codebeauty location in this map.. :D
+*/
+void fruits(){
+   map<string,string> dic;
+   dic.insert(pair<string,string>("1 kg apple", "die fruits "));
+   dic.insert(pair<string,string>("11 kg orange", "living fruits"));
+   dic.insert(pair<string,string>("7 kg berry", "newborn fruits")); 
+   dic.insert(pair<string,string>("6 kg banna", "unborn fruits")); 
+   for (auto p : dic)
+        cout << p.first << " - " << p.second << endl;
+}
+int main(){
+    fruits(); //does not support NATURAL SORT ORDER, how to implement this logic
 }
