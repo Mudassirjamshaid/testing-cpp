@@ -1,21 +1,26 @@
 #include <iostream>
-#include <stack>
+#include <queue>
 
 using namespace std;
 
-//Stack Has Five Mathed Pap Push Size empty 
+
+
 int main()
 {
-  stack<string> stack;
+  queue<string> queue;
 
-  stack.push("Apple");
-  stack.push("Banana");
-  stack.push("Orange");
-  stack.push("Mango");
-  stack.push("CPP");
+  queue.push("Apple");
+  queue.push("Banana");
+  queue.push("Orange");
+  queue.push("Mango");
+  queue.push("CPP");
 
+while (!queue.empty())
+{
+  cout << queue.front() << ", ";
+  queue.pop(); 
+}
+cout <<endl;
 
-  cout << stack.empty() << endl;
-  cout << stack.size() << endl;
   return 0;
 }

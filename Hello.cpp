@@ -14,7 +14,7 @@ int main() {
   
   cout << "Stack: ";
 
-  // print elements of stack
+  
    while(!colors.empty()) {
     cout << colors.top() << ", ";
     colors.pop();
