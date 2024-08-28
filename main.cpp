@@ -1,74 +1,25 @@
 #include <iostream>
-#include <cstdlib>
-#include <fstream>
-#include <cmath>
-#include <string>
+#include <list>
+#include <map>
 
 using namespace std;
 
-template <typename T>
-class Person {
-public:
-    T name;
-    T age;
-    T subject;
-    T dept;
-    T rollNo;
-    T stander;
-    T email;
-    T marks;
-    T cgpa;
-    T salery;
-    T pasword;
-
-    void input() {
-        cout << "Enter Your Name: ";
-        getline(cin, name);
-        cout << "Enter Your Age: ";
-        cin >> age;
-        cin.ignore(); // Clear input buffer
-        cout << "Enter Your Stander: ";
-        cin >> stander;
-        cin.ignore(); // Clear input buffer
-        cout << "Enter Your Subject: ";
-        getline(cin, subject);
-        cout << "Enter Your RollNo: ";
-        cin >> rollNo;
-        cout << "Enter Your Marks: ";
-        cin >> marks;
-        cin.ignore(); // Clear input buffer
-        cout << "Enter Your Department: ";
-        getline(cin, dept);
-        cout << "Enter Your Cgpa: ";
-        cin >> cgpa;
-        cin.ignore(); // Clear input buffer
-        cout << "Enter Your Email: ";
-        getline(cin, email);
-        cout << "Enter Your Password: ";
-        getline(cin, pasword);
-        cout << "Enter Your Salary: ";
-        cin >> salery;
-    }
-};
-
 int main() {
-    Person<string> stringInfo;
-    stringInfo.input();
+    map<string, list<string>> mystring;
+    list<string> cats {"oggy", "Jack", "olivia", "tom", "jerry"};
+    list<string> dogs {"BOB", "dog2", "dog3", "dog4" };
+    list<string> cockroach {"Dee Dee", "Marky", "Joey"};
 
-    ofstream myInfo("Text.txt");
+    mystring.insert(pair<string, list<string>>("cats", cats));
+    mystring.insert(pair<string, list<string>>("dogs", dogs));
+    mystring.insert(pair<string, list<string>>("cockroach", cockroach));
 
-    myInfo << "Personal Information" << endl;
-    myInfo << "Person Name: " << stringInfo.name << endl;
-    myInfo << "Person Age: " << stringInfo.age << endl;
-    myInfo << "Person Stander: " << stringInfo.stander << endl;
-    myInfo << "Person Subject: " << stringInfo.subject << endl;
-    myInfo << "Person Department: " << stringInfo.dept << endl;
-    myInfo << "Person Marks: " << stringInfo.marks << endl;
-    myInfo << "Person Cgpa: " << stringInfo.cgpa << endl;
-    myInfo << "Person Email: " << stringInfo.email << endl;
-    myInfo << "Person Password: " << stringInfo.pasword << endl;
-    myInfo << "Person Salary: " << stringInfo.salery << endl;
-
-    myInfo.close();
+    for(auto pair : mystring) {
+        cout << pair.first << ": ";
+        for(auto animal : pair.second) {
+            cout << animal << " ";
+        }
+        cout << endl;
+    }
     return 0;
 }
