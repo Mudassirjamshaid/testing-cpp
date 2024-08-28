@@ -1,12 +1,11 @@
-Personal Information 
-
-Person Name : Mudassir
-Person Age : 17
-Person Stander : 2
-Person subject : cpp
-Person Department : cumputer
-Person Marks : 425
-Person Cgpa : 9.2
-Person Cgpa : mudasirjamshaid9@gmail.com
-Person Cgpa : admin123
-Person Cgpa : $1200
+Personal Information
+Person Name: Mudasir Abbas
+Person Age: 17
+Person Stander: 2
+Person Subject: CPP
+Person Department: Computer Science
+Person Marks: 452
+Person Cgpa: 9.3
+Person Email: mudassirjamshaid9@gmail.com
+Person Password: Admin123@
+Person Salary: $1200
