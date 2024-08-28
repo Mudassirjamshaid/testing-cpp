@@ -1,37 +1,19 @@
 #include <iostream>
-#include <queue>
+#include <unordered_map>
+
 using namespace std;
 
 int main() {
+  unordered_map<string, string> myDictionary;
+  myDictionary.insert(pair<string, string> ("Banana", "kala"));
+  myDictionary.insert(pair<string, string> ("Orange", "Malta"));
+  myDictionary.insert(pair<string, string> ("Apple", "Saab"));
 
-  // create a queue of string
-  queue<string> languages;
+  for (auto pair : myDictionary)
+  {
+    cout << pair.first << " - " << pair.second << endl;
+  }
   
-  cout << "Is the queue empty? ";
-
-  // check if the queue is empty  
-  if (languages.empty()) {
-    cout << "Yes" << endl;
-  }
-  else {
-    cout << "No" << endl;
-  }
-
-  cout << "Pushing elements..." << endl;
-
-  // push element into the queue
-  languages.push("Python");
-  languages.push("C++");
- 
-  cout << "Is the queue empty? ";
-
-  // check if the queue is empty  
-  if (languages.empty()) {
-    cout << "Yes";
-  }
-  else {
-    cout << "No";
-  }
 
   return 0;
 }
