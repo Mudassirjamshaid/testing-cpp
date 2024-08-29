@@ -8,11 +8,7 @@ int main() {
     map <int, string> student {{1, "Denise"}, {2, "Blake"}, {3, "Courtney"}, {4, "John"}, {5, "Jennifer"}};
     
 
-<<<<<<< HEAD
-    ofstream myInfo("Text.txt"); 
-=======
     map <int, string>::iterator itr;
->>>>>>> 5fa0e28a9989df1c5afbadf1063eec6954fdee5d
 
     cout << "Initial Values:" << endl;
 
