@@ -4,23 +4,36 @@ using namespace std;
 
 int main() {
     
-    map<int, string> student;
-  
-    // use [] operator to add elements
-    student[1] = "Jacqueline";
-    student[2] = "Blake";
+    // create a map named student
+    map <int, string> student {{1, "Denise"}, {2, "Blake"}, {3, "Courtney"}, {4, "John"}, {5, "Jennifer"}};
+    
+    // create map iterator
+    map <int, string>::iterator itr;
 
-    // use insert() method to add elements
-    student.insert(make_pair(3, "Denise"));
-    student.insert(make_pair(4, "Blake"));
+    // display initial map values
+    cout << "Initial Values:" << endl;
 
-    // add elements with duplicate keys
-    student[5] = "Timothy";
-    student[5] = "Aaron";
-
-    for (int i = 1; i <= student.size(); ++i) {
-        cout << "Student[" << i << "]: " << student[i] << endl;
+    for(itr = student.begin(); itr != student.end(); ++itr) {
+        cout << itr->second << ", ";
     }
+    
+    cout << endl;
+    
+    // use itr iterator to point to the first map element
+    itr = student.begin();
 
+    // remove the first element
+    student.erase(itr);
+
+    // remove the element having key 4
+    student.erase(4);
+
+    // display final map values
+    cout << "\nFinal Values:" << endl;
+
+    for(itr = student.begin(); itr != student.end(); ++itr) {
+        cout << itr->second << ", ";
+    }
+    
     return 0;
 }
