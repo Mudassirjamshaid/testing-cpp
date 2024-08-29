@@ -55,7 +55,7 @@ int main() {
     Person<string> stringInfo;
     stringInfo.input();
 
-    ofstream myInfo("Text.txt");
+    ofstream myInfo("Text.txt"); 
 
     myInfo << "Personal Information" << endl;
     myInfo << "Person Name: " << stringInfo.name << endl;
