@@ -2,31 +2,33 @@
 #include <stack>
 using namespace std;
 
+class Person
+{
+private:
+  /* data */
+public:
+   string name;
+   int age;
+  Person(string name, int age);
+  ~Person();
+};
+
+Person::Person(string name, int age)
+{
+  this->name = name;
+  this->age = age; 
+}
+
+Person::~Person()
+{
+  cout << "destractor is playing...\n";
+}
+
 int main()
 {
+  Person p("mudasir", 17);
 
-  // create a stack of strings
-  stack<string> colors;
-
-  // push elements into the stack
-  colors.push("Red");
-  colors.push("Orange");
-  colors.push("cpp");
-  colors.push("oggy");
-  colors.push("Dee DEE");
-  colors.push("Marky");
-  colors.push("joey");
-  colors.push("bob");
-  colors.push("jack");
-  colors.push("olivia");
-
-  cout << "Stack: ";
-
-  while (!colors.empty())
-  {
-    cout << colors.top() << ", ";
-    colors.pop();
-  }
-
+  cout << "name: " << p.name << endl;
+  cout << "Age: " << p.age << endl;
   return 0;
 }
