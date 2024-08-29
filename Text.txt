@@ -1,11 +1,18 @@
-Personal Information
-Person Name: Mudasir Abbas
-Person Age: 17
-Person Stander: 2
-Person Subject: CPP
-Person Department: Computer Science
-Person Marks: 452
-Person Cgpa: 9.3
-Person Email: mudassirjamshaid9@gmail.com
-Person Password: Admin123@
-Person Salary: $1200
+Information about Employees
+Name: Muzammil Hussain
+Age: 23
+Gender: male
+Address: layyah
+Education: IT
+Skills: software enginear
+
+Information about Students
+Name: Mudassir Abbas
+Age: 16
+Gender: male
+Address: layyah
+Subject: c++
+Marks: 450
+Grades: A
+Interests: cpp
+Goals: software enginear
