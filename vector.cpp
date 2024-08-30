@@ -2,36 +2,36 @@
 using namespace std;
 
 // Base class
-class Base {
+class Animal {
 public:
-    int baseValue;
+    string name;
 
     // Parameterized constructor
-    Base(int value) : baseValue(value) {
-        cout << "Base class constructor called with value: " << value << endl;
+    Animal(string animalName) : name(animalName) {
+        cout << "Animal constructor called with name: " << name << endl;
     }
 };
 
 // Derived class
-class Derived : public Base {
+class Dog : public Animal {
 public:
-    int derivedValue;
+    int age;
 
     // Parameterized constructor
-    Derived(int baseVal, int derivedVal) : Base(baseVal), derivedValue(derivedVal) {
-        cout << "Derived class constructor called with value: " << derivedVal << endl;
+    Dog(string dogName, int dogAge) : Animal(dogName), age(dogAge) {
+        cout << "Dog constructor called with name: " << dogName << " and age: " << dogAge << endl;
     }
 
     // Overloaded constructor
-    Derived(int baseVal) : Base(baseVal), derivedValue(0) {
-        cout << "Derived class overloaded constructor called with base value: " << baseVal << endl;
+    Dog(string dogName) : Animal(dogName), age(0) {
+        cout << "Dog overloaded constructor called with name: " << dogName << endl;
     }
 };
 
 int main() {
     // Creating objects using different constructors
-    Derived obj1(10, 20);
-    Derived obj2(30);
+    Dog dog1("Buddy", 3);
+    Dog dog2("Max");
 
     return 0;
 }
