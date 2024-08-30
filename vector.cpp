@@ -2,36 +2,36 @@
 using namespace std;
 
 // Base class
-class Animal {
+class Vehicle {
 public:
-    string name;
+    string brand;
 
     // Parameterized constructor
-    Animal(string animalName) : name(animalName) {
-        cout << "Animal constructor called with name: " << name << endl;
+    Vehicle(string vehicleBrand) : brand(vehicleBrand) {
+        cout << "Vehicle constructor called with brand: " << brand << endl;
     }
 };
 
 // Derived class
-class Dog : public Animal {
+class Car : public Vehicle {
 public:
-    int age;
+    string model;
 
     // Parameterized constructor
-    Dog(string dogName, int dogAge) : Animal(dogName), age(dogAge) {
-        cout << "Dog constructor called with name: " << dogName << " and age: " << dogAge << endl;
+    Car(string carBrand, string carModel) : Vehicle(carBrand), model(carModel) {
+        cout << "Car constructor called with brand: " << carBrand << " and model: " << carModel << endl;
     }
 
     // Overloaded constructor
-    Dog(string dogName) : Animal(dogName), age(0) {
-        cout << "Dog overloaded constructor called with name: " << dogName << endl;
+    Car(string carBrand) : Vehicle(carBrand), model("Unknown") {
+        cout << "Car overloaded constructor called with brand: " << carBrand << endl;
     }
 };
 
 int main() {
     // Creating objects using different constructors
-    Dog dog1("Buddy", 3);
-    Dog dog2("Max");
+    Car car1("Toyota", "Corolla");
+    Car car2("Honda");
 
     return 0;
 }
