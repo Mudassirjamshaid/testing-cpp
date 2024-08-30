@@ -1,53 +1,26 @@
 #include <iostream>
+#include <stack>
+
 using namespace std;
 
-// Define a Node structure
-struct Node {
-    int data;
-    Node* left;
-    Node* right;
-
-    Node(int value) {
-        data = value;
-        left = nullptr;
-        right = nullptr;
+void printElement(stack<string>stack) {
+    while (!stack.empty())
+    {
+        cout << stack.top() << endl;
+        stack.pop();
     }
-};
-
-// Function to insert a new node in the binary tree
-Node* insertNode(Node* root, int value) {
-    if (root == nullptr) {
-        return new Node(value);
-    }
-
-    if (value < root->data) {
-        root->left = insertNode(root->left, value);
-    } else {
-        root->right = insertNode(root->right, value);
-    }
-
-    return root;
-}
-
-// Function to print the tree in in-order traversal
-void inOrderTraversal(Node* root) {
-    if (root != nullptr) {
-        inOrderTraversal(root->left);
-        cout << root->data << " ";
-        inOrderTraversal(root->right);
-    }
+    
 }
 
 int main() {
-    Node* root = nullptr;
-    root = insertNode(root, 10);
-    insertNode(root, 5);
-    insertNode(root, 15);
-    insertNode(root, 3);
-    insertNode(root, 7);
+    stack<string> fruits;
+    fruits.push("Apple");
+    fruits.push("Banana");
+    fruits.push("orane");
+    fruits.push("cherry");
+    fruits.push("oggy");
+    fruits.push("jack");
 
-    cout << "In-order traversal of the binary tree: ";
-    inOrderTraversal(root);
-
+    printElement(fruits);
     return 0;
 }
