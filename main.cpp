@@ -1,38 +1,55 @@
 #include <iostream>
-#include <map>
 using namespace std;
 
+// Define a node structure
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+
+    Node(int value) {
+        data = value;
+        left = nullptr;
+        right = nullptr;
+    }
+};
+
+// Function to insert a node in the binary tree
+Node* insertNode(Node* root, int value) {
+    if (root == nullptr) {
+        return new Node(value);
+    }
+
+    if (value < root->data) {
+        root->left = insertNode(root->left, value);
+    } else {
+        root->right = insertNode(root->right, value);
+    }
+
+    return root;
+}
+
+// Function to print the tree in in-order traversal
+void inOrderTraversal(Node* root) {
+    if (root != nullptr) {
+        inOrderTraversal(root->left);
+        cout << root->data << " ";
+        inOrderTraversal(root->right);
+    }
+}
+
 int main() {
-    
-   
-    map <int, string> student {{1, "Denise"}, {2, "Blake"}, {3, "Courtney"}, {4, "John"}, {5, "Jennifer"}};
-    
+    Node* root = nullptr;
+    root = insertNode(root, 50);
+    insertNode(root, 30);
+    insertNode(root, 70);
+    insertNode(root, 20);
+    insertNode(root, 40);
+    insertNode(root, 60);
+    insertNode(root, 80);
 
-    map <int, string>::iterator itr;
+    cout << "In-order traversal of the binary tree: ";
+    inOrderTraversal(root);
 
-    cout << "Initial Values:" << endl;
-
-    for(itr = student.begin(); itr != student.end(); ++itr) {
-        cout << itr->second << ", ";
-    }
-    
-    cout << endl;
-    
-
-    itr = student.begin();
-
-
-    student.erase(itr);
-
-
-    student.erase(4);
-
-
-    cout << "\nFinal Values:" << endl;
-
-    for(itr = student.begin(); itr != student.end(); ++itr) {
-        cout << itr->second << ", ";
-    }
-    
     return 0;
 }
