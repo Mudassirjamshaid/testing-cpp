@@ -1,18 +1,18 @@
 Information about Employees
-Name: Muzammil Hussain
-Age: 23
+Name: Mudassir abbas
+Age: 17
 Gender: male
 Address: layyah
-Education: IT
-Skills: software enginear
+Education: matric
+Skills: No
 
 Information about Students
-Name: Mudassir Abbas
-Age: 16
+Name: Mudasir Jamshaid
+Age: 18
 Gender: male
 Address: layyah
-Subject: c++
-Marks: 450
+Subject: cpp
+Marks: 440
 Grades: A
-Interests: cpp
-Goals: software enginear
+Interests: Software enginear
+Goals: IT specialist

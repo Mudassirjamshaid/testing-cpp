@@ -148,6 +148,7 @@ int main() {
     } else {
         cout << "Unable to open file" << endl;
     }
-
+    
+system("pause");
     return 0;
 }
