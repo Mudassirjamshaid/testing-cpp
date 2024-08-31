@@ -1,26 +1,22 @@
 #include <iostream>
-#include <unordered_map>
+#include <map>
 using namespace std;
 
 int main() {
-
-  // uniform initialization
-  unordered_map<string, int> unordered_map1  {
-  {"One", 1},
-  {"Two", 2},
-  {"Three", 3}
- };
-
-  cout << "Key - Value" << endl;
-
-  // loop across the unordered map
-  // display the key-value pairs
-  for(const auto& key_value: unordered_map1) {
-    string key = key_value.first;
-    int value = key_value.second;
-    
-    cout << key << " - " << value << endl;
-  }
-  
+map<int, string> mystring {
+    {1, "Mudassir"},
+    {2, "Sawera"},
+    {3, "oggy"},
+    {4, "bob"},
+    {5, "Muzammil"},
+    {6, "jack"},
+    {10, "olivia"},
+    {8, "dee dee"},
+    {9, "james"},
+    {7, "josh"},
+};
+    for(auto it = mystring.begin(); it != mystring.end(); it++) {
+        cout << it->first << " " << it->second << endl;
+    }
   return 0;
 }
