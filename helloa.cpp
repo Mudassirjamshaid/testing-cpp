@@ -24,5 +24,8 @@ int main()
 cout << it->first << " - " << it->second << endl;
     }
 
+//     cout << endl;
+//    it = student.find(2);
+
     return 0;
 }
