@@ -1,9 +1,9 @@
 #include <iostream>
-#include <map>
+#include <unordered_map>
 using namespace std;
 
-int main() {
-map<int, string> mystring {
+int main(){
+unordered_map<int, string> mystring {
     {1, "Mudassir"},
     {2, "Sawera"},
     {3, "oggy"},
