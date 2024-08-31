@@ -1,17 +1,35 @@
 #include <iostream>
+#include <thread>
+
 using namespace std;
 
-int main() {
-    int rows;
-    cout << "Enter number of rows: ";
-    cin >> rows;
-
-    for (int i = 1; i <= rows; ++i) {
-        for (int j = 1; j <= i; ++j) {
-            cout << "* ";
-        }
-        cout << endl;
+void function1()
+{
+    for (int i = 0; i < 200; i++)
+    {
+        cout << "*";
     }
+}
 
+void function2()
+{
+    for (int i = 0; i < 200; i++)
+    {
+        cout << "+";
+    }
+}
+
+int main()
+{
+    // Create two threads and assign them to the respective functions
+    thread worker1(function1);
+    thread worker2(function2);
+
+    // Join the threads to ensure they complete before exiting
+    worker1.join();
+    worker2.join();
+
+    // Wait for user input before exiting
+    cin.get();
     return 0;
 }
