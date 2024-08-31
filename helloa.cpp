@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
 
-    map<int, string> student{{1, "oggy"}, {2, "bob"}, {3, "olivia"}, {4, "joey"}};
+    map<int, string> student;
 
     student[1] = "oggy";
     student[2] = "bob";
