@@ -1,24 +1,26 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
 #include <map>
-#include <string>
-
 using namespace std;
 
-int main()
-{
-    map<int, string> mymap;
-    mymap.insert(pair<int, string>(1, "apple"));
-    mymap.insert(pair<int, string>(2, "orage"));
-    mymap.insert(pair<int, string>(3, "banana"));
-    mymap.insert(pair<int, string>(4, "oggy"));
-    mymap.insert(pair<int, string>(5,"jack"));
-
-    for (auto pair : mymap)
-    {
-        cout << pair.first << " - " << pair.second << endl;
-    }
+int main() {
     
+    map<int, string> student;
+  
+    // use [] operator to add elements
+    student[1] = "Jacqueline";
+    student[2] = "Blake";
+
+    // use insert() method to add elements
+    student.insert(make_pair(3, "Denise"));
+    student.insert(make_pair(4, "Blake"));
+
+    // add elements with duplicate keys
+    student[5] = "Timothy";
+    student[5] = "Aaron";
+
+    for (int i = 1; i <= student.size(); ++i) {
+        cout << "Student[" << i << "]: " << student[i] << endl;
+    }
+
     return 0;
 }
