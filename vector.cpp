@@ -8,5 +8,6 @@ int main() {
     for(int number : myNumber) {
         cout << number << endl;
     }
+    
     return 0;  
 }
