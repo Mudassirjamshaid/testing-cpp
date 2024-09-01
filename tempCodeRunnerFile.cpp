@@ -1,32 +1,40 @@
-#include <iostream>     
-#include <set>          
+#include <iostream>
+#include <deque>
+
 using namespace std;
-   
-int main () {
 
-    set<int> my_set = {10, 20, 30};
+int main() {
+    deque<int> dq;
 
-    cout << "The set before clear: ";
-    for (int i : my_set) {
-        cout << i << "  ";
+    // Insert elements at the back
+    dq.push_back(10);
+    dq.push_back(20);
+    dq.push_back(30);
+
+    // Insert elements at the front
+    dq.push_front(5);
+    dq.push_front(1);
+
+    // Display the deque
+    cout << "Deque elements: ";
+    for (int elem : dq) {
+        cout << elem << " ";
     }
-    
+    cout << endl;
 
-    cout << "\nEmpty: " << my_set.empty() << endl;
+    // Remove elements from the front
+    dq.pop_front();
+    dq.pop_front();
 
+    // Remove elements from the back
+    dq.pop_back();
 
-    cout << "Size: " << my_set.size() << endl;
-
-    my_set.clear();
-
-    cout << "\nThe set after clear: ";
-    for (int i : my_set) {
-        cout << i << "  ";
+    // Display the deque after removals
+    cout << "Deque elements after removals: ";
+    for (int elem : dq) {
+        cout << elem << " ";
     }
-
-    cout << "\nEmpty: " << my_set.empty() << endl;
-    cout << "Size: " << my_set.size() << endl;
-    
+    cout << endl;
 
     return 0;
 }
