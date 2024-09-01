@@ -1,13 +1,34 @@
-#include <iostream>
-#include <vector>
+#include <iostream>     
+#include <set>          
 using namespace std;
+   
+int main () {
 
-int main() {
-    vector<int> myNumber {1,2, 3, 4, 5, 6, 7, 8, 9};
+    set<int> my_set;
 
-    for(int number : myNumber) {
-        cout << number << endl;
+    // add values to the set
+    my_set.insert(10);
+    my_set.insert(30);
+    my_set.insert(20);
+    my_set.insert(50);
+    my_set.insert(40);
+    my_set.insert(50);
+    
+    // check if 40 exists
+    int num = 40;
+    if(my_set.count(num) == 1) {
+        cout << num << " exists." << endl;
+    } else {
+        cout << num << " doesn't exist." << endl;
     }
     
-    return 0;  
+    // check if 60 exists
+    num = 60;
+    if(my_set.count(num) == 1) {
+        cout << num << " exists." << endl;
+    } else {
+        cout << num << " doesn't exist." << endl;
+    }
+    
+    return 0;
 }
