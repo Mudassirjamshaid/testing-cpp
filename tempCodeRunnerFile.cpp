@@ -1,19 +1,31 @@
-#include <iostream>
-#include <map>
+#include <iostream>     
+#include <set>          
 using namespace std;
+   
+int main () {
 
-int main()
-{
-    map<int, string> employes {
-        {1, "Mudassir"}, {2, "sawera"},
-        {3, "oggy"}, {4, "Dee Dee"},
-        {5, "Marky"}, {5, "joey"},
-        {6, "jamshaid"}, {9, "Hello"},
-    };
+    set<int> my_set = {10, 20, 30};
 
-    for(auto pair : employes) {
-        cout << pair.first << " - " << pair.second << endl;
+    cout << "The set before clear: ";
+    for (int i : my_set) {
+        cout << i << "  ";
     }
-    cin.get();
+    
+
+    cout << "\nEmpty: " << my_set.empty() << endl;
+
+
+    cout << "Size: " << my_set.size() << endl;
+
+    my_set.clear();
+
+    cout << "\nThe set after clear: ";
+    for (int i : my_set) {
+        cout << i << "  ";
+    }
+
+    cout << "\nEmpty: " << my_set.empty() << endl;
+    cout << "Size: " << my_set.size() << endl;
+
     return 0;
 }
