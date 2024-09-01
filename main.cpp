@@ -14,7 +14,7 @@ struct Node {
     }
 };
 
-// Function to insert a node in the binary tree
+
 Node* insertNode(Node* root, int value) {
     if (root == nullptr) {
         return new Node(value);
