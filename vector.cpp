@@ -29,6 +29,5 @@ int main () {
     } else {
         cout << num << " doesn't exist." << endl;
     }
-    
     return 0;
 }
