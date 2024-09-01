@@ -6,7 +6,7 @@ using namespace std;
 int main() {
     deque<int> dq;
 
-    // Insert elements at the back
+   
     dq.push_back(10);
     dq.push_back(20);
     dq.push_back(30);
