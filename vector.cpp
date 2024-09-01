@@ -1,36 +1,22 @@
-#include <iostream>     
-#include <set>          
+#include <iostream>
 using namespace std;
-   
-int main () {
 
-    set<int> my_set = {10, 20, 30, 40};
-    
-    // set before deletion
-    cout << "The set before deletion: ";
-    for (int i : my_set) {
-        cout << i << "  ";
-    }
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+};
 
-    // delete values from the set
-    my_set.erase(10);
-    my_set.erase(20);
-    
-    // set after deletion
-    cout << "\nThe set after deletion: ";
-    for (int i : my_set) {
-        cout << i << "  ";
-    }
+Node* createNode(int data) {
+    Node* newNode = new Node;
+    newNode->data = data;
+    newNode->left = newNode->right = nullptr;
+    return newNode;
+}
 
-    // delete all elements from the set
-    my_set.clear();
-
-    // set after clearing all elements
-    cout << "\nThe set after clearing all elements: ";
-    for (int i : my_set) {
-        cout << i << "  ";
-    }
-    
-    
+int main() {
+    Node* root = createNode(1);
+    root->left = createNode(2);
+    root->right = createNode(3);
     return 0;
 }
