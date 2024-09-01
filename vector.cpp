@@ -1,23 +1,12 @@
 #include <iostream>
-#include <map>
+#include <vector>
 using namespace std;
 
 int main() {
+    vector<int> myNumber {1,2, 3, 4, 5, 6, 7, 8, 9};
 
-    map<int, string> student;
-
-    student[1] = "Jacqueline";
-    student[2] = "Blake";
-    student[3] = "Denise";
-    student[4] = "Aaron";
-
-    // declare map iterator
-    map<int, string>::iterator iter;
-
-    // use iterator to display map elements
-    for (iter = student.begin(); iter != student.end(); ++iter) {
-        cout << iter->first << " - " << iter->second << endl;
+    for(int number : myNumber) {
+        cout << number << endl;
     }
-
     return 0;  
 }
