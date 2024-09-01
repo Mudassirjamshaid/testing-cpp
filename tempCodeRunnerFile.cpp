@@ -1,12 +1,16 @@
 #include <iostream>
 #include <thread>
+#include <mutex>
 
 using namespace std;
+
+std::mutex mtx;  // Mutex for synchronizing output
 
 void function1()
 {
     for (int i = 0; i < 200; i++)
     {
+        std::lock_guard<std::mutex> guard(mtx);  // Lock the mutex
         cout << "*";
     }
 }
@@ -15,15 +19,15 @@ void function2()
 {
     for (int i = 0; i < 200; i++)
     {
+        std::lock_guard<std::mutex> guard(mtx);  // Lock the mutex
         cout << "+";
     }
 }
 
 int main()
 {
-    // Create two threads and assign them to the respective functions
-    thread worker1(function1);
-    thread worker2(function2);
+    std::thread worker1(function1);
+    std::thread worker2(function2);
 
     // Join the threads to ensure they complete before exiting
     worker1.join();
