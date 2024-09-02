@@ -1,40 +1,27 @@
+
 #include <iostream>
-#include <deque>
+#include <stack>
 
 using namespace std;
 
-int main() {
-    deque<int> dq;
-
-   
-    dq.push_back(10);
-    dq.push_back(20);
-    dq.push_back(30);
-
-    // Insert elements at the front
-    dq.push_front(5);
-    dq.push_front(1);
-
-    // Display the deque
-    cout << "Deque elements: ";
-    for (int elem : dq) {
-        cout << elem << " ";
+void myElement(stack<int> stack)
+{
+    while (!stack.empty())
+    {
+        cout << stack.top() << endl;
+        stack.pop();
     }
-    cout << endl;
+}
 
-    // Remove elements from the front
-    dq.pop_front();
-    dq.pop_front();
-
-    // Remove elements from the back
-    dq.pop_back();
-
-    // Display the deque after removals
-    cout << "Deque elements after removals: ";
-    for (int elem : dq) {
-        cout << elem << " ";
-    }
-    cout << endl;
-
+int main()
+{
+    stack<int> my_stack;
+    my_stack.push(1);
+    my_stack.push(2);
+    my_stack.push(3);
+    my_stack.push(4);
+    my_stack.push(5);
+    
+    myElement(my_stack);
     return 0;
 }
