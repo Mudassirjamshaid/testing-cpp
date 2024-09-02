@@ -1,27 +1,19 @@
-
 #include <iostream>
-#include <stack>
+#include <map>
 
 using namespace std;
 
-void myElement(stack<int> stack)
-{
-    while (!stack.empty())
-    {
-        cout << stack.top() << endl;
-        stack.pop();
-    }
-}
-
 int main()
 {
-    stack<int> my_stack;
-    my_stack.push(1);
-    my_stack.push(2);
-    my_stack.push(3);
-    my_stack.push(4);
-    my_stack.push(5);
-    
-    myElement(my_stack);
+    map<int, string> my_map{
+        {1, "Hello"}, {2, "Mudassir Jamshaid"}, {4, "Oggy"},
+        {6, "Dee Dee"}, {5, "Marky"}, {8, "joey"}, {9, "jack"},
+        {10, "Bob"}, {11, "olivia"}, {12, "Sawera"}
+    };
+
+    for (const auto& i : my_map) {
+        cout << i.first << ": " << i.second << endl;
+    }
+
     return 0;
 }
