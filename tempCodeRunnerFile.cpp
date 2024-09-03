@@ -1,19 +1,22 @@
-#include <iostream>
-#include <map>
+#include<iostream>
+#include <thread>
 
 using namespace std;
 
-int main()
-{
-    map<int, string> my_map{
-        {1, "Hello"}, {2, "Mudassir Jamshaid"}, {4, "Oggy"},
-        {6, "Dee Dee"}, {5, "Marky"}, {8, "joey"}, {9, "jack"},
-        {10, "Bob"}, {11, "olivia"}, {12, "Sawera"}
-    };
-
-    for (const auto& i : my_map) {
-        cout << i.first << ": " << i.second << endl;
-    }
-
-    return 0;
+void function1() {
+	for (int i = 0; i <+ 200; i++)
+	{
+		cout << "+";
+	}
+}
+void function2() {
+	for (int i = 0; i < +200; i++)
+	{
+		cout << "-";
+	}
+}
+int main() {
+	thread worker1(function1);
+	thread worker2(function2);
+	return 0;
 }
