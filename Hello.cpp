@@ -4,16 +4,12 @@ using namespace std;
 
 class Person {
 private:
-  // Private data members can be added here if needed
-
 public:
   string name;
   int age;
 
-  // Constructor
   Person(string name, int age);
 
-  // Destructor
   ~Person();
 };
 
@@ -30,10 +26,8 @@ class Student : public Person {
 public:
   int rollno;
 
-  // Constructor for Student, taking name, age, and rollno
   Student(string name, int age, int rollno);
 
-  // Destructor
   ~Student();
 };
 
@@ -46,12 +40,10 @@ Student::~Student() {
 }
 
 int main() {
-  // Creating a Person object
   Person p("Mudasir", 17);
   cout << "Name: " << p.name << endl;
   cout << "Age: " << p.age << endl;
 
-  // Creating a Student object
   Student s("Ali", 20, 45);
   cout << "Name: " << s.name << endl;
   cout << "Age: " << s.age << endl;
