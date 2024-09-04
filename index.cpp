@@ -46,6 +46,8 @@ void printPrivateInfo(const Person<T>& person) {
     cout << "Password: " << person.password << endl;
 }
 
+
+
 class Employes : public Person<string> {
 public:
     void input() override {

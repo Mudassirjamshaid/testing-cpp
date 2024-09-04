@@ -13,7 +13,6 @@ Node* createNode(int data) {
     newNode->left = newNode->right = nullptr;
     return newNode;
 }
-
 int main() {
     Node* root = createNode(1);
     root->left = createNode(2);
@@ -28,5 +27,4 @@ int main() {
     root->left->right->left = createNode(9);
      root->right->right->left = createNode(9);
     return 0;
-    
 }

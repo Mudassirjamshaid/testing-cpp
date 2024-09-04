@@ -29,7 +29,7 @@ Node* insertNode(Node* root, int value) {
     return root;
 }
 
-// Function to print the tree in in-order traversal
+
 void inOrderTraversal(Node* root) {
     if (root != nullptr) {
         inOrderTraversal(root->left);
