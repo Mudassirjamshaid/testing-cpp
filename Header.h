@@ -1,15 +1,30 @@
 #pragma once
-#include<iostream>
+#include <iostream>
 
-void function2();
-void function1();
-void function1() {
-	for (int i = 0; i <= 200; i++) {
-		std::cout << "-";
+void calculator();
+void calculator()
+{
+	char op;
+	float num1, num2;
+	cout << "Enter operator (+, -, *, /): ";
+	cin >> op;
+	cout << "Enter two operands: ";
+	cin >> num1 >> num2;
+
+	switch (op)
+	{
+	case '+':
+		cout << num1 + num2 << endl;
+		break;
+	case '-':
+		cout << num1 - num2 << endl;
+		break;
+	case '*':
+		cout << num1 * num2 << endl;
+		break;
+	case '/':
+		if (num2 != 0)
+			cout << num1 / num2 << endl;
 	}
-}
-void function2() {
-	for (int i = 0; i <= 200; i++) {
-		std::cout << "+";
-	}
+	,
 }
