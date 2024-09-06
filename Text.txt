@@ -1,16 +1,26 @@
 Information about Employees
-Name: Mudasir abbas
-Age: 18
+Name: Muzammil Hussain
+Age: 22
 Gender: male
 Address: lahore
-Education: it
-Skills: enginer
-Languages: urdu
+Phone: .....
+Email: me@gmail.com
+Birthday: 12, 23, 2000 
+Occupation: ???
+Education: Bs IT
+Skills: software enginearing
+Languages: English
+Hobbies: gardning
 
 Information about Students
-Name: Mudassir abbas
+Name: Mudassir Abbas
 Age: 17
 Gender: male
 Address: layyah
+Education: metric
 Interests: cpp
-Goals: d
+Goals: to get job in Microsoft
+Ambitions: software enginear
+Subject: cpp
+Marks: 830/1100
+Grades: 72%

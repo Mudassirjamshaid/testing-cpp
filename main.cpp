@@ -1,9 +1,9 @@
+#include <fstream>
 #include <iostream>
 #include <string>
-#include <fstream> 
 using namespace std;
 
-template<typename T>
+template <typename T>
 class Base {
 private:
     T salary;
@@ -31,19 +31,19 @@ public:
     T grades;
 
     virtual void input() = 0;
-    //virtual void display() = 0;
+    virtual void display() const = 0;  // Display function added
+    virtual void saveToFile(ofstream& file) const = 0;  // Save function added
 };
 
-template<typename T>
+template <typename T>
 class Employes : public Base<T> {
 public:
     void input() override {
-        cout << "Enter Inforamtion if Employes" << endl;
+        cout << "Enter Information for Employees" << endl;
         cout << "Enter name: ";
         getline(cin, this->name);
         cout << "Enter age: ";
-        cin >> this->age;
-        cin.ignore(); 
+        getline(cin, this->age);
         cout << "Enter gender: ";
         getline(cin, this->gender);
         cout << "Enter address: ";
@@ -54,85 +54,143 @@ public:
         getline(cin, this->email);
         cout << "Enter birthday: ";
         getline(cin, this->birthday);
+        cout << "Enter occupation: ";
+        getline(cin, this->occupation);
         cout << "Enter education: ";
         getline(cin, this->education);
         cout << "Enter skills: ";
         getline(cin, this->skills);
-        cout << "Enter language: ";
+        cout << "Enter languages: ";
         getline(cin, this->languages);
+        cout << "Enter hobbies: ";
+        getline(cin, this->hobbies);
     }
 
+    void display() const override {
+        cout << "\nEmployee Information:" << endl;
+        cout << "Name: " << this->name << endl;
+        cout << "Age: " << this->age << endl;
+        cout << "Gender: " << this->gender << endl;
+        cout << "Address: " << this->address << endl;
+        cout << "Phone: " << this->phone << endl;
+        cout << "Email: " << this->email << endl;
+        cout << "Birthday: " << this->birthday << endl;
+        cout << "Occupation: " << this->occupation << endl;
+        cout << "Education: " << this->education << endl;
+        cout << "Skills: " << this->skills << endl;
+        cout << "Languages: " << this->languages << endl;
+        cout << "Hobbies: " << this->hobbies << endl;
+    }
+
+    void saveToFile(ofstream& file) const override {
+        if (file.is_open()) {
+            file << "Information about Employees" << endl;
+            file << "Name: " << this->name << endl;
+            file << "Age: " << this->age << endl;
+            file << "Gender: " << this->gender << endl;
+            file << "Address: " << this->address << endl;
+            file << "Phone: " << this->phone << endl;
+            file << "Email: " << this->email << endl;
+            file << "Birthday: " << this->birthday << endl;
+            file << "Occupation: " << this->occupation << endl;
+            file << "Education: " << this->education << endl;
+            file << "Skills: " << this->skills << endl;
+            file << "Languages: " << this->languages << endl;
+            file << "Hobbies: " << this->hobbies << endl;
+        } else {
+            cout << "Unable to open file to save employee information." << endl;
+        }
+    }
 };
 
-template<typename T>
+template <typename T>
 class Student : public Base<T> {
 public:
     void input() override {
-        cout << "Enter Information if Students" << endl;
+        cout << "\nEnter Information for Students" << endl;
         cout << "Enter student name: ";
         getline(cin, this->name);
         cout << "Enter student age: ";
-        cin >> this->age;
-        cin.ignore(); 
+        getline(cin, this->age);
         cout << "Enter student gender: ";
         getline(cin, this->gender);
         cout << "Enter student address: ";
         getline(cin, this->address);
-		// cout << "Enter your Subject: "
-		// getline(cin, this->subject);
-       cout << "Education: ";
+        cout << "Enter education: ";
         getline(cin, this->education);
-        cout << "interests: ";
+        cout << "Enter interests: ";
         getline(cin, this->interests);
-        cout << "Goals: ";
+        cout << "Enter goals: ";
         getline(cin, this->goals);
-        cout << "Ambitions: ";
+        cout << "Enter ambitions: ";
         getline(cin, this->ambitions);
-        
+        cout << "Enter subject: ";
+        getline(cin, this->subject);
+        cout << "Enter marks: ";
+        getline(cin, this->marks);
+        cout << "Enter grades: ";
+        getline(cin, this->grades);
+    }
+
+    void display() const override {
+        cout << "\nStudent Information:" << endl;
+        cout << "Name: " << this->name << endl;
+        cout << "Age: " << this->age << endl;
+        cout << "Gender: " << this->gender << endl;
+        cout << "Address: " << this->address << endl;
+        cout << "Education: " << this->education << endl;
+        cout << "Interests: " << this->interests << endl;
+        cout << "Goals: " << this->goals << endl;
+        cout << "Ambitions: " << this->ambitions << endl;
+        cout << "Subject: " << this->subject << endl;
+        cout << "Marks: " << this->marks << endl;
+        cout << "Grades: " << this->grades << endl;
+    }
+
+    void saveToFile(ofstream& file) const override {
+        if (file.is_open()) {
+            file << "\nInformation about Students" << endl;
+            file << "Name: " << this->name << endl;
+            file << "Age: " << this->age << endl;
+            file << "Gender: " << this->gender << endl;
+            file << "Address: " << this->address << endl;
+            file << "Education: " << this->education << endl;
+            file << "Interests: " << this->interests << endl;
+            file << "Goals: " << this->goals << endl;
+            file << "Ambitions: " << this->ambitions << endl;
+            file << "Subject: " << this->subject << endl;
+            file << "Marks: " << this->marks << endl;
+            file << "Grades: " << this->grades << endl;
+        } else {
+            cout << "Unable to open file to save student information." << endl;
+        }
     }
 };
 
 int main() {
+    Employes<string> employee;
+    employee.input();
+    employee.display();
 
-  Employes<string> employee;
-  employee.input();
+    ofstream file("Text.txt");
+    if (file.is_open()) {
+        employee.saveToFile(file);
+        file.close();
+    } else {
+        cout << "Unable to open file to save employee information." << endl;
+    }
 
-  ofstream file("Text.txt");
-  if (file.is_open()) {
-      file << "Information about Employees" << endl;
-      file << "Name: " << employee.name << endl;
-      file << "Age: " << employee.age << endl;
-      file << "Gender: " << employee.gender << endl;
-      file << "Address: " << employee.address << endl;
-      file << "Education: " << employee.education << endl;
-      file << "Skills: " << employee.skills << endl;
-      file << "Languages: " << employee.languages << endl;
-      file.close();
-  } else {
-      cout << "Unable to open file" << endl;
-  }
-    
     Student<string> student;
     student.input();
+    student.display();
 
     file.open("Text.txt", ios::app);  // Open file in append mode
     if (file.is_open()) {
-        file << "\nInformation about Students" << endl;
-        file << "Name: " << student.name << endl;
-        file << "Age: " << student.age << endl;
-        file << "Gender: " << student.gender << endl;
-        file << "Address: " << student.address << endl;
-        //file << "Subject: " << student.subject << endl;
-        // file << "Marks: " << student.marks << endl;
-        // file << "Grades: " << student.grades << endl;
-        file << "Interests: " << student.interests << endl;
-        file << "Goals: " << student.goals << endl;
-		file << "Ambition: " << student.ambitions << endl;
+        student.saveToFile(file);
         file.close();
     } else {
-        cout << "Unable to open file" << endl;
+        cout << "Unable to open file to save student information." << endl;
     }
 
-   
     return 0;
 }
