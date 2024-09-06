@@ -26,5 +26,4 @@ void calculator()
 		if (num2 != 0)
 			cout << num1 / num2 << endl;
 	}
-	,
 }

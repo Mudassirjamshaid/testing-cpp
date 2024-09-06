@@ -31,7 +31,6 @@ public:
     T marks;
     T grades;
 
-    // Declare the friend function to access private members
     template <typename U>
     friend void printPrivateInfo(const Person<U>& person);
 
@@ -112,7 +111,6 @@ public:
 };
 
 int main() {
-    // Employee information
     Employes employee;
     employee.input();
 
@@ -131,7 +129,7 @@ int main() {
     }
 
 
-    // Student information
+
     Student student;
     student.input();
 
