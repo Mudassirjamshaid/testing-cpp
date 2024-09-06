@@ -130,6 +130,7 @@ int main() {
         cout << "Unable to open file" << endl;
     }
 
+
     // Student information
     Student student;
     student.input();
