@@ -78,8 +78,8 @@ public:
         getline(cin, this->gender);
         cout << "Enter student address: ";
         getline(cin, this->address);
-		cout << "Enter your Subject: "
-		getline(cin, this->subject);
+		// cout << "Enter your Subject: "
+		// getline(cin, this->subject);
        cout << "Education: ";
         getline(cin, this->education);
         cout << "interests: ";
@@ -122,11 +122,12 @@ int main() {
         file << "Age: " << student.age << endl;
         file << "Gender: " << student.gender << endl;
         file << "Address: " << student.address << endl;
-        file << "Subject: " << student.subject << endl;
+        //file << "Subject: " << student.subject << endl;
         // file << "Marks: " << student.marks << endl;
         // file << "Grades: " << student.grades << endl;
         file << "Interests: " << student.interests << endl;
         file << "Goals: " << student.goals << endl;
+		file << "Ambition: " << student.ambitions << endl;
         file.close();
     } else {
         cout << "Unable to open file" << endl;
