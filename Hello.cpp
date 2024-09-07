@@ -1,20 +1,27 @@
 #include <iostream>
-
+#include <string>
 using namespace std;
 
-enum eyeColor
+struct Hello
 {
-  brown,
-  blue,
-  dark,
-  Green,
-  Gray,
-  other
+    string name;
+    int youTubeChannelCount;
+
+    Hello(string name, int youTubeChannelCount) {
+        this->name = name;
+        this->youTubeChannelCount = youTubeChannelCount;
+    }
 };
+
+void operator<<(ostream& COUT, Hello& yt1) {
+    COUT << "Name: " << yt1.name << endl;
+    COUT << "youTubeChannelCount: " << yt1.youTubeChannelCount << endl;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+};
+
 
 int main()
 {
-  eyeColor myEyeColor = brown;
-  cout << myEyeColor << endl;
-  return 0;
+    Hello yt1("Mudassir", 2500);
+    cout << yt1;
+    return 0;
 }
