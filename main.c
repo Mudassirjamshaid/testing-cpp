@@ -6,7 +6,8 @@
 int main() 
 { 
     char ch[10];
-    scanf("%C", ch);
+    printf("Enter your number: ");
+    scanf("%s", &ch);
     printf("%s", ch);
     return 0;
 }
