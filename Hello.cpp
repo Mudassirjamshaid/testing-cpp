@@ -1,19 +1,20 @@
 #include <iostream>
-#include <thread>
+
 using namespace std;
 
-void driverCar(string driverName) {
-  cout << driverName << "is Driving " << endl;
-  this_thread::sleep_for(chrono::seconds(2));
-  cout << driverName << "is done driving " << endl;
-}
+enum eyeColor
+{
+  brown,
+  blue,
+  dark,
+  Green,
+  Gray,
+  other
+};
 
 int main()
 {
-  thread t1(driverCar, "oggy");
-  thread t2(driverCar, "jack");
-
-  t1.join();
-  t2.join();
+  eyeColor myEyeColor = brown;
+  cout << myEyeColor << endl;
   return 0;
 }
