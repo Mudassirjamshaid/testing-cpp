@@ -4,7 +4,8 @@
 using namespace std;
 
 template <typename T>
-class Base {
+class Base
+{
 private:
     T salary;
     T password;
@@ -31,14 +32,16 @@ public:
     T grades;
 
     virtual void input() = 0;
-    virtual void display() const = 0;  // Display function added
-    virtual void saveToFile(ofstream& file) const = 0;  // Save function added
+    virtual void display() const = 0;                  // Display function added
+    virtual void saveToFile(ofstream &file) const = 0; // Save function added
 };
 
 template <typename T>
-class Employes : public Base<T> {
+class Employes : public Base<T>
+{
 public:
-    void input() override {
+    void input() override
+    {
         cout << "Enter Information for Employees" << endl;
         cout << "Enter name: ";
         getline(cin, this->name);
@@ -66,7 +69,8 @@ public:
         getline(cin, this->hobbies);
     }
 
-    void display() const override {
+    void display() const override
+    {
         cout << "\nEmployee Information:" << endl;
         cout << "Name: " << this->name << endl;
         cout << "Age: " << this->age << endl;
@@ -82,8 +86,10 @@ public:
         cout << "Hobbies: " << this->hobbies << endl;
     }
 
-    void saveToFile(ofstream& file) const override {
-        if (file.is_open()) {
+    void saveToFile(ofstream &file) const override
+    {
+        if (file.is_open())
+        {
             file << "Information about Employees" << endl;
             file << "Name: " << this->name << endl;
             file << "Age: " << this->age << endl;
@@ -97,16 +103,20 @@ public:
             file << "Skills: " << this->skills << endl;
             file << "Languages: " << this->languages << endl;
             file << "Hobbies: " << this->hobbies << endl;
-        } else {
+        }
+        else
+        {
             cout << "Unable to open file to save employee information." << endl;
         }
     }
 };
 
 template <typename T>
-class Student : public Base<T> {
+class Student : public Base<T>
+{
 public:
-    void input() override {
+    void input() override
+    {
         cout << "\nEnter Information for Students" << endl;
         cout << "Enter student name: ";
         getline(cin, this->name);
@@ -132,7 +142,8 @@ public:
         getline(cin, this->grades);
     }
 
-    void display() const override {
+    void display() const override
+    {
         cout << "\nStudent Information:" << endl;
         cout << "Name: " << this->name << endl;
         cout << "Age: " << this->age << endl;
@@ -147,8 +158,10 @@ public:
         cout << "Grades: " << this->grades << endl;
     }
 
-    void saveToFile(ofstream& file) const override {
-        if (file.is_open()) {
+    void saveToFile(ofstream &file) const override
+    {
+        if (file.is_open())
+        {
             file << "\nInformation about Students" << endl;
             file << "Name: " << this->name << endl;
             file << "Age: " << this->age << endl;
@@ -161,22 +174,28 @@ public:
             file << "Subject: " << this->subject << endl;
             file << "Marks: " << this->marks << endl;
             file << "Grades: " << this->grades << endl;
-        } else {
+        }
+        else
+        {
             cout << "Unable to open file to save student information." << endl;
         }
     }
 };
 
-int main() {
+int main()
+{
     Employes<string> employee;
     employee.input();
     employee.display();
 
     ofstream file("Text.txt");
-    if (file.is_open()) {
+    if (file.is_open())
+    {
         employee.saveToFile(file);
         file.close();
-    } else {
+    }
+    else
+    {
         cout << "Unable to open file to save employee information." << endl;
     }
 
@@ -184,11 +203,14 @@ int main() {
     student.input();
     student.display();
 
-    file.open("Text.txt", ios::app);  // Open file in append mode
-    if (file.is_open()) {
+    file.open("Text.txt", ios::app); // Open file in append mode
+    if (file.is_open())
+    {
         student.saveToFile(file);
         file.close();
-    } else {
+    }
+    else
+    {
         cout << "Unable to open file to save student information." << endl;
     }
 
